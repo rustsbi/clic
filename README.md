@@ -8,7 +8,7 @@ Core-Local Interrupt Controller (CLIC) RISC-V Privileged Architecture support cr
 
 ## License
 
-`clic` is licensed under Mulan PSL v2.
+`clic` is licensed under MIT or Mulan PSL v2.
 
 ```
 Copyright (c) 2023 RustSBI Team

@@ -24,7 +24,7 @@ impl Mintstatus {
     pub const fn mil(self) -> u8 {
         ((self.bits & Self::MIL) >> 24) as u8
     }
-    
+
     /// Supervisor-mode interrupt level.
     #[inline]
     pub const fn sil(self) -> u8 {

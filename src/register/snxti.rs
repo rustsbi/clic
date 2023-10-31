@@ -1,7 +1,6 @@
 //! Supervisor interrupt handler address and enable modifier register.
 use core::arch::asm;
 
-
 /// Get next interrupt handler address and enable SIE.
 #[inline]
 pub fn next_handler_set_sie() -> usize {

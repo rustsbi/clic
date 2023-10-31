@@ -17,7 +17,7 @@ impl Sintstatus {
     pub const fn bits(self) -> usize {
         self.bits
     }
-    
+
     /// Supervisor-mode interrupt level.
     #[inline]
     pub const fn sil(self) -> u8 {

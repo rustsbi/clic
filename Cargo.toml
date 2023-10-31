@@ -1,11 +1,27 @@
 [package]
 name = "clic"
 description = "Core-Local Interrupt Controller (CLIC) RISC-V Privileged Architecture support crate"
-authors = ["Zhouqi Jiang <luojia@hust.edu.cn>"]
 version = "0.0.0"
+authors = [
+    "Zhouqi Jiang <luojia@hust.edu.cn>",
+    "Qing Dong <placebo27@hust.edu.cn>",
+    "Zhenchen Wang <m202372036@hust.edu.cn>"
+]
+repository = "https://github.com/rustsbi/clic"
+documentation = "https://docs.rs/clic"
+license = "MulanPSL-2.0 OR MIT"
+readme = "README.md"
+keywords = ["riscv", "clic", "interrupt"]
+categories = ["os", "embedded", "hardware-support", "no-std"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 volatile-register = "0.2.2"
+
+[package.metadata.docs.rs]
+default-target = "riscv64imac-unknown-none-elf"
+targets = [
+    "riscv32imac-unknown-none-elf", "riscv64imac-unknown-none-elf",
+]

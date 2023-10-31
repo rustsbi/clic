@@ -10,10 +10,10 @@ pub mod mtvec;
 pub mod mtvt;
 
 pub mod scause;
-pub mod snxti;
-pub mod stvec; 
-pub mod stvt;
 pub mod sintstatus;
 pub mod sintthresh;
+pub mod snxti;
 pub mod sscratchcsw;
 pub mod sscratchcswl;
+pub mod stvec;
+pub mod stvt;
