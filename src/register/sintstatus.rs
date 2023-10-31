@@ -1,15 +1,14 @@
-//! Machine current interrupt level register.
+//! Supervisor current interrupt level register.
 use core::arch::asm;
 
-/// Machine current interrupt level register.
+/// Supervisor current interrupt level register.
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 #[repr(transparent)]
-pub struct Mintstatus {
+pub struct Sintstatus {
     bits: usize,
 }
 
-impl Mintstatus {
-    const MIL: usize = 0xff << 24;
+impl Sintstatus {
     const SIL: usize = 0xff << 8;
     const UIL: usize = 0xff << 0;
 
@@ -17,12 +16,6 @@ impl Mintstatus {
     #[inline]
     pub const fn bits(self) -> usize {
         self.bits
-    }
-
-    /// Machine-mode interrupt level.
-    #[inline]
-    pub const fn mil(self) -> u8 {
-        ((self.bits & Self::MIL) >> 24) as u8
     }
     
     /// Supervisor-mode interrupt level.
@@ -38,10 +31,10 @@ impl Mintstatus {
     }
 }
 
-/// Reads the CLIC 'mintstatus' CSR.
+/// Reads the CLIC 'sintstatus' CSR.
 #[inline]
-pub fn read() -> Mintstatus {
+pub fn read() -> Sintstatus {
     let bits: usize;
-    unsafe { asm!("csrr {}, 0xFB1", out(reg) bits) };
-    Mintstatus { bits }
+    unsafe { asm!("csrr {}, 0xDB1", out(reg) bits) };
+    Sintstatus { bits }
 }

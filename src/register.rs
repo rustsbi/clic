@@ -9,4 +9,11 @@ pub mod mscratchcswl;
 pub mod mtvec;
 pub mod mtvt;
 
-// TODO supervisor mode registers
+pub mod scause;
+pub mod snxti;
+pub mod stvec; 
+pub mod stvt;
+pub mod sintstatus;
+pub mod sintthresh;
+pub mod sscratchcsw;
+pub mod sscratchcswl;
